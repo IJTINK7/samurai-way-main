@@ -1,7 +1,6 @@
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  text-align: center;
   margin: 0 auto;
   width: 1200px;
   background-color: white;
