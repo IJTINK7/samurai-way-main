@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-import "./12-Components/Header.css";
-
-import {Header} from "./12-Components/Header";
-import {Navigation} from "./12-Components/Navigation";
-import {Content} from "./12-Components/Content";
+import "./Header/Header.css";
+import {Header} from "./Header/Header";
+import {Navigation} from "./Navbar/Navigation";
+import {Content} from "./Profile/Content";
 
 function App() {
   return (
