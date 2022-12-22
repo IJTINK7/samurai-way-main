@@ -1,5 +1,5 @@
 import React from "react";
-import s from "../Posts.module.css";
+import s from "./Post.module.css";
 
 type PostType ={
 	src: string;
