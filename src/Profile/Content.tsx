@@ -1,4 +1,5 @@
 import React from "react";
+import {MyPosts} from "./MyPosts";
 
 export const Content = () => {
 	return (
@@ -9,11 +10,7 @@ export const Content = () => {
 					alt="content-img"/>
 			</div>
 			<div>Ava+Description</div>
-			<div>My posts
-				<div>New Post</div>
-				<div>Post 1</div>
-				<div>Post 2</div>
-			</div>
+			<MyPosts/>
 		</div>
 	);
 }
