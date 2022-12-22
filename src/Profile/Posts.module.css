@@ -1,3 +1,8 @@
 .posts{
     width: 50vh;
+    margin: 0 auto;
+}
+.posts img{
+ width: 200px;
+ height: 200px;
 }
