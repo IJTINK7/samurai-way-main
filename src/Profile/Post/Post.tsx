@@ -10,7 +10,8 @@ type PostType ={
 export const Post = (props:PostType) => {
 	return (
 		<div className={s.item}>
-			<img src={props.src} alt={props.alt}/>
+			<img
+				src={props.src} alt={props.alt}/>
 			<div>{props.postName}</div>
 		</div>
 	);
