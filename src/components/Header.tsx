@@ -1,12 +1,9 @@
 import React from 'react';
-
+import image from "./../images/sharingan.jpg"
 export const Header = () => {
 	return (
-		<div>
-			<div>Home</div>
-			<div>News</div>
-			<div>Feed</div>
-			<div>Messages</div>
+		<div className={"header_wrapper"}>
+			<img src={image} alt={"Logo image"} className={"logo_image"}/>
 		</div>
 	);
 };
