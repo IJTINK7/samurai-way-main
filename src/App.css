@@ -1,38 +1,74 @@
+body{
+  background-color: black;
+}
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 100%;
+  font-size: 40px;
+}
+.header_wrapper{
+  background-color: black;
+  margin-bottom: 10px;
+  padding: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo_image{
+  margin-left: 3%;
+  width: 70px;
+  height: 70px;
+  animation: rotation 5s infinite linear;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); /* Начальный угол поворота */
+  }
+  to {
+    transform: rotate(360deg); /* Конечный угол поворота */
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navigation_content_container{
+  display: flex;
+  color: white;
+  margin-bottom: 10px;
+}
+.navigation_content_container > div{
+  background-color: black;
+  height: 75vh;
+}
+.navigation_wrapper{
+  width: 10%;
+  margin-right: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.navigation_wrapper>div:hover{
+  color: #FE0001;
+}
+.content_wrapper{
+  width: 90%;
+  margin-left: 5px;
+  text-align: center;
+}
+.content_wrapper_input{
+  width: 500px;
+  height: 30px;
+  margin: 5px;
+}
+.content_wrapper_button{
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+}
+.footer_wrapper{
+  background-color: black;
   color: white;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer_wrapper>div:hover{
+  color: #FE0001
 }
