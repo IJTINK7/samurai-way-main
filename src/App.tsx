@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Header} from "./components/Header";
 import {Navigation} from "./components/Navigation";
-import {Content} from "./components/Content";
+import {Profile} from "./components/Profile";
 import {Footer} from "./components/Footer";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Header/>
         <div className={"navigation_content_container"}>
             <Navigation/>
-            <Content/>
+            <Profile/>
         </div>
       <Footer/>
     </div>
