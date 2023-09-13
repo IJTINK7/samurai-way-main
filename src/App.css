@@ -30,12 +30,12 @@ body{
     transform: rotate(360deg); /* Конечный угол поворота */
   }
 }
-.navigation_content_container{
+.navigation_profile_container{
   display: flex;
   color: white;
   margin-bottom: 10px;
 }
-.navigation_content_container > div{
+.navigation_profile_container > div{
   background-color: black;
   height: 75vh;
 }
@@ -49,17 +49,17 @@ body{
 .navigation_wrapper>div:hover{
   color: #FE0001;
 }
-.content_wrapper{
+.profile_wrapper{
   width: 90%;
   margin-left: 5px;
   text-align: center;
 }
-.content_wrapper_input{
+.profile_wrapper_input{
   width: 500px;
   height: 30px;
   margin: 5px;
 }
-.content_wrapper_button{
+.profile_wrapper_button{
   width: 100px;
   height: 30px;
   margin: 5px;
