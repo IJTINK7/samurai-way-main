@@ -1,0 +1,15 @@
+.profile_wrapper{
+	width: 90%;
+	margin-left: 5px;
+	text-align: center;
+}
+.profile_wrapper_input{
+	width: 500px;
+	height: 30px;
+	margin: 5px;
+}
+.profile_wrapper_button{
+	width: 100px;
+	height: 30px;
+	margin: 5px;
+}

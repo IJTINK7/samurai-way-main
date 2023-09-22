@@ -1,12 +1,13 @@
 import React from 'react';
+import s from "./Profile.module.css"
 
 export const Profile = () => {
 	return (
-		<div className={"profile_wrapper"}>
+		<div className={s.profile_wrapper}>
 			Content
 			<div>
-				<input type="text" className={"profile_wrapper_input"}/>
-				<button className={"profile_wrapper_button"}>Add Post</button>
+				<input type="text" className={s.profile_wrapper_input}/>
+				<button className={s.profile_wrapper_button}>Add Post</button>
 			</div>
 		</div>
 	);

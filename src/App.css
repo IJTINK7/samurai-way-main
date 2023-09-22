@@ -1,6 +1,3 @@
-body{
-  background-color: black;
-}
 .App {
   display: flex;
   flex-direction: column;
@@ -8,27 +5,6 @@ body{
   background-color: white;
   height: 100%;
   font-size: 40px;
-}
-.header_wrapper{
-  background-color: black;
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-.logo_image{
-  margin-left: 3%;
-  width: 70px;
-  height: 70px;
-  animation: rotation 5s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg); /* Начальный угол поворота */
-  }
-  to {
-    transform: rotate(360deg); /* Конечный угол поворота */
-  }
 }
 .navigation_profile_container{
   display: flex;
@@ -38,37 +14,4 @@ body{
 .navigation_profile_container > div{
   background-color: black;
   height: 75vh;
-}
-.navigation_wrapper{
-  width: 10%;
-  margin-right: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.navigation_wrapper>div:hover{
-  color: #FE0001;
-}
-.profile_wrapper{
-  width: 90%;
-  margin-left: 5px;
-  text-align: center;
-}
-.profile_wrapper_input{
-  width: 500px;
-  height: 30px;
-  margin: 5px;
-}
-.profile_wrapper_button{
-  width: 100px;
-  height: 30px;
-  margin: 5px;
-}
-.footer_wrapper{
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-.footer_wrapper>div:hover{
-  color: #FE0001
 }

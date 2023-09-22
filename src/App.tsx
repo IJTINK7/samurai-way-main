@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
         <Header/>
-        <div className={"navigation_content_container"}>
+        <div className={"navigation_profile_container"}>
             <Navigation/>
             <Profile/>
         </div>
