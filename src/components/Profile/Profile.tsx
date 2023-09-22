@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React from 'react';
 import s from "./Profile.module.css"
 import img from "./../../images/obita-uchiha-sage-of-six-paths.jpg"
 import {MyPosts} from "./MyPosts/MyPosts";
