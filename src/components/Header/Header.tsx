@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "./../images/sharingan.jpg"
+import image from "../../images/sharingan.jpg"
 import s from "./Header.module.css"
 export const Header = () => {
 	return (
