@@ -6,8 +6,8 @@ type PostPropsType = {
 }
 export const Post: React.FC<PostPropsType> = ({postText}) => {
 	return (
-		<div className={s.profile_wrapper}>
-			<img src={uchihaLogo} alt="Uchiha logo" width="50px" style={{borderRadius: "50%"}}/>
+		<div className={s.post_wrapper}>
+			<img src={uchihaLogo} alt="Uchiha logo" />
 			<span>{postText}</span>
 		</div>
 	);

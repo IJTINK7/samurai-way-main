@@ -1,14 +1,14 @@
-.profile_wrapper{
-	width: 90%;
-	margin-left: 5px;
+.my_posts_wrapper{
+	display: flex;
 	text-align: center;
+	flex-direction: column;
 }
-.profile_wrapper_input{
+.my_posts_wrapper_input{
 	width: 500px;
 	height: 30px;
 	margin: 5px;
 }
-.profile_wrapper_button{
+.my_posts_wrapper_button{
 	width: 100px;
 	height: 30px;
 	margin: 5px;
