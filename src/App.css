@@ -10,6 +10,7 @@
   display: flex;
   color: white;
   margin-bottom: 10px;
+  width: 100%;
 }
 .navigation_profile_container > div{
   background-color: black;
