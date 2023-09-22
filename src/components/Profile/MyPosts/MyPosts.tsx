@@ -22,6 +22,8 @@ export const MyPosts = () => {
 
 				<div>
 					<Post postText={postTextValue}/>
+					<Post postText={"There is no such thing as peace in this world — that is reality."}/>
+					<Post postText={"I don’t feel pain, I don’t feel anything!"}/>
 				</div>
 		</div>
 	);
