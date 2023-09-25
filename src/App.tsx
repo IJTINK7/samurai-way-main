@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import {Header} from "./components/Header/Header";
 import {Navigation} from "./components/Navigation/Navigation";
-import {Profile} from "./components/Profile/Profile";
 import {Footer} from "./components/Footer/Footer";
+import {Dialogs} from "./components/Dialogs/Dialogs";
 
 function App() {
   return (
@@ -11,7 +11,8 @@ function App() {
         <Header/>
         <div className={"navigation_profile_container"}>
             <Navigation/>
-            <Profile/>
+            {/*<Profile/>*/}
+            <Dialogs/>
         </div>
       <Footer/>
     </div>

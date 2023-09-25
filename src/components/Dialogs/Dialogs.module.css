@@ -1,0 +1,7 @@
+.dialogs_wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin-left: 5px;
+	text-align: center;
+}
