@@ -8,7 +8,14 @@
 	display: flex;
 	flex-direction: column;
 }
+.dialogs_items > div:hover{
+	color: #FE0001;
+}
 .dialogs_messages{
 	display: flex;
 	flex-direction: column;
 }
+.dialogs_messages{
+	color: #8336E7;
+}
+
