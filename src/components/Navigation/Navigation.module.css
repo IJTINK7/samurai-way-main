@@ -8,3 +8,15 @@
 .navigation_wrapper>div:hover{
 	color: #FE0001;
 }
+.navigation_wrapper>div>a{
+	color: white;
+	text-decoration: none;
+}
+.navigation_wrapper>div>a.activeLink{
+	color: #FE0001;
+	text-decoration: none;
+}
+.navigation_wrapper>div>a.navLink{
+	color: white;
+	text-decoration: none;
+}
