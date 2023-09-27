@@ -8,26 +8,23 @@ import {Profile} from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
-  return (
-      <BrowserRouter>
-          <div className="App">
-              <Header/>
-              <div className={"navigation_content_container"}>
-                  <Navigation/>
-                  <div className={"content_container"}>
-                      <Routes>
-                          <Route path="/home" element={<Profile/>}/>
-                          <Route path="/dialogs" element= {<Dialogs/>}/>
-                      </Routes>
-                  </div>
-              </div>
-
-
-
-              <Footer/>
-          </div>
-      </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<div className="App">
+				<Header/>
+				<div className={"navigation_content_container"}>
+					<Navigation/>
+					<div className={"content_container"}>
+						<Routes>
+							<Route path="/home" element={<Profile/>}/>
+							<Route path="/dialogs" element={<Dialogs/>}/>
+						</Routes>
+					</div>
+				</div>
+				<Footer/>
+			</div>
+		</BrowserRouter>
+	);
 }
 
 export default App;
