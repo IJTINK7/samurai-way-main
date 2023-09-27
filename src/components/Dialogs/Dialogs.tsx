@@ -1,19 +1,20 @@
 import React from 'react';
 import s from "./Dialogs.module.css"
-import {NavLink} from "react-router-dom";
+import {DialogsItem} from "./DialogsItem";
+import {DialogsMessage} from "./DialogsMessage";
 type PropsType = {}
 export const Dialogs: React.FC<PropsType> = () => {
 	return (
 		<div className={s.dialogs_wrapper}>
 			<div className={s.dialogs_items}>
-				<div className={s.dialogs_item}><NavLink to="/dialogs/1" className={({isActive})=>isActive ? s.activeLink : s.navLink}>Minato</NavLink></div>
-				<div className={s.dialogs_item}><NavLink to="/dialogs/2" className={({isActive})=>isActive ? s.activeLink : s.navLink}>Kakashi</NavLink></div>
-				<div className={s.dialogs_item}><NavLink to="/dialogs/3" className={({isActive})=>isActive ? s.activeLink : s.navLink}>Rin</NavLink></div>
+				<DialogsItem navigationLink={"/dialogs/1"} title={"Minato"}/>
+				<DialogsItem navigationLink={"/dialogs/2"} title={"Kakashi"}/>
+				<DialogsItem navigationLink={"/dialogs/3"} title={"Rin"}/>
 			</div>
 			<div className={s.dialogs_messages}>
-				<div className={s.dialogs_message}>You and I will become Hokage.</div>
-				<div className={s.dialogs_message}>Do you know what happens to people who break the rules?</div>
-				<div className={s.dialogs_message}>Become Hokage and show me how you'll save the world!</div>
+				<DialogsMessage title={"You and I will become Hokage."}/>
+				<DialogsMessage title={"Do you know what happens to people who break the rules?"}/>
+				<DialogsMessage title={"Become Hokage and show me how you'll save the world!"}/>
 			</div>
 		</div>
 	);
