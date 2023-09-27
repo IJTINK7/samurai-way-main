@@ -6,9 +6,6 @@ export const Dialogs: React.FC<PropsType> = () => {
 	return (
 		<div className={s.dialogs_wrapper}>
 			<div className={s.dialogs_items}>
-				{/*<div className={s.dialogs_item}>Minato</div>*/}
-				{/*<div className={s.dialogs_item}>Kakashi</div>*/}
-				{/*<div className={s.dialogs_item}>Rin</div>*/}
 				<div className={s.dialogs_item}><NavLink to="/dialogs/1" className={({isActive})=>isActive ? s.activeLink : s.navLink}>Minato</NavLink></div>
 				<div className={s.dialogs_item}><NavLink to="/dialogs/2" className={({isActive})=>isActive ? s.activeLink : s.navLink}>Kakashi</NavLink></div>
 				<div className={s.dialogs_item}><NavLink to="/dialogs/3" className={({isActive})=>isActive ? s.activeLink : s.navLink}>Rin</NavLink></div>
