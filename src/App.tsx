@@ -16,8 +16,8 @@ function App() {
 					<Navigation/>
 					<div className={"content_container"}>
 						<Routes>
-							<Route path="/home" element={<Profile/>}/>
-							<Route path="/dialogs" element={<Dialogs/>}/>
+							<Route path="/home/*" element={<Profile/>}/>
+							<Route path="/dialogs/*" element={<Dialogs/>}/>
 						</Routes>
 					</div>
 				</div>

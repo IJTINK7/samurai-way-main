@@ -18,4 +18,15 @@
 .dialogs_messages{
 	color: #8336E7;
 }
-
+.dialogs_items>div>a{
+	color: white;
+	text-decoration: none;
+}
+.dialogs_items>div>a.activeLink{
+	color: #FE0001;
+	text-decoration: none;
+}
+.dialogs_items>div>a.navLink{
+	color: white;
+	text-decoration: none;
+}
