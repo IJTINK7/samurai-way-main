@@ -6,13 +6,21 @@
   height: 100%;
   font-size: 40px;
 }
-.navigation_profile_container{
+.navigation_content_container{
   display: flex;
   color: white;
   margin-bottom: 10px;
   width: 100%;
 }
-.navigation_profile_container > div{
+.navigation_content_container > div{
   background-color: black;
   height: 75vh;
+}
+.content_container{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 5px;
+  text-align: center;
 }
