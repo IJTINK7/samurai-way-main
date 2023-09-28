@@ -7,9 +7,9 @@ export const Dialogs: React.FC<PropsType> = () => {
 	return (
 		<div className={s.dialogs_wrapper}>
 			<div className={s.dialogs_items}>
-				<DialogsItem navigationLink={"/dialogs/1"} title={"Minato"}/>
-				<DialogsItem navigationLink={"/dialogs/2"} title={"Kakashi"}/>
-				<DialogsItem navigationLink={"/dialogs/3"} title={"Rin"}/>
+				<DialogsItem id={"/dialogs/1"} title={"Minato"}/>
+				<DialogsItem id={"/dialogs/2"} title={"Kakashi"}/>
+				<DialogsItem id={"/dialogs/3"} title={"Rin"}/>
 			</div>
 			<div className={s.dialogs_messages}>
 				<DialogsMessage title={"You and I will become Hokage."}/>
