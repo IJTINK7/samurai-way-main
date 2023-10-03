@@ -2,7 +2,13 @@
 	display: flex;
 	justify-content: center;
 }
-.post_wrapper > img {
+.post_logo_likesCount_wrapper{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 25px;
+}
+.post_logo_likesCount_wrapper > img {
 	width: 50px;
 	border-radius: 50%;
 }
