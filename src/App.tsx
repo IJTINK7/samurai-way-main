@@ -6,9 +6,15 @@ import {Footer} from "./components/Footer/Footer";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Profile} from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+export type DialogsDataType = {id: number, name: string}[]
 
 function App() {
-	return (
+	const dialogsData: DialogsDataType = [
+		{id: 1, name: "Minato"},
+		{id: 2, name: "Kakashi"},
+		{id: 3, name: "Rin"},
+	]
+		return (
 		<BrowserRouter>
 			<div className="App">
 				<Header/>
@@ -16,8 +22,9 @@ function App() {
 					<Navigation/>
 					<div className={"content_container"}>
 						<Routes>
+							<Route path="/" element={<div>Разбей все компоненты на мелкие и навесь стили hovera при наведении на элементы навигации и имена в диалогах</div>}/>
 							<Route path="/home/*" element={<Profile/>}/>
-							<Route path="/dialogs/*" element={<Dialogs/>}/>
+							<Route path="/dialogs/*" element={<Dialogs dialogsData={dialogsData}/>}/>
 						</Routes>
 					</div>
 				</div>
