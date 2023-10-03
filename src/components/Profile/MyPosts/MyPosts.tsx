@@ -1,15 +1,20 @@
 import React, {ChangeEvent, useState} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
+import {PostsInfoType} from "../../../App";
 
-export const MyPosts = () => {
+type MyPostsPropsType={
+	postsInfo: PostsInfoType
+}
+
+export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo}) => {
 	const [postsValue, setPostsValue] = useState("")
-	const [postTextValue, setPostTextValue] = useState("I am Obito Uchiha and I will surpass you once I awaken my Sharingan!")
+	// const [postTextValue, setPostTextValue] = useState("Add this string to new post")
 	const setPostsValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		setPostsValue(e.currentTarget.value)
 	}
 	const sendPost = () => {
-		setPostTextValue(postsValue)
+		// setPostTextValue(postsValue)
 		setPostsValue("")
 	}
 	return (
@@ -21,9 +26,7 @@ export const MyPosts = () => {
 				</div>
 
 				<div>
-					<Post postText={postTextValue}/>
-					<Post postText={"There is no such thing as peace in this world — that is reality."}/>
-					<Post postText={"I don’t feel pain, I don’t feel anything!"}/>
+					{postsInfo.map(el=><Post postText={el.postText} likesCount={el.likesCount}/>)}
 				</div>
 		</div>
 	);
