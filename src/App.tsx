@@ -8,6 +8,7 @@ import {Profile} from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 export type DialogsDataType = {id: number, name: string}[]
 export type DialogsMessagesType = {id: number, title: string}[]
+export type PostsInfoType = {id: number, postText: string, likesCount: number}[]
 
 function App() {
 	const dialogsData: DialogsDataType = [
@@ -22,6 +23,11 @@ function App() {
 		{id: 3,title: "Become Hokage and show me how you'll save the world!"},
 		{id: 4,title: "Hey"},
 	]
+	const postsInfo =[
+		{id: 1, postText: "I am Obito Uchiha and I will surpass you once I awaken my Sharingan!", likesCount: 3},
+		{id: 2, postText: "There is no such thing as peace in this world — that is reality.", likesCount: 5},
+		{id: 3, postText: "I don’t feel pain, I don’t feel anything!", likesCount: 7},
+	]
 		return (
 		<BrowserRouter>
 			<div className="App">
@@ -31,7 +37,7 @@ function App() {
 					<div className={"content_container"}>
 						<Routes>
 							<Route path="/" element={<div>Разбей все компоненты на мелкие и навесь стили hovera при наведении на элементы навигации и имена в диалогах</div>}/>
-							<Route path="/home/*" element={<Profile/>}/>
+							<Route path="/home/*" element={<Profile postsInfo={postsInfo}/>}/>
 							<Route path="/dialogs/*" element={<Dialogs dialogsData={dialogsData} dialogsMessages={dialogsMessages}/>}/>
 						</Routes>
 					</div>
