@@ -11,14 +11,10 @@ export const Dialogs: React.FC<PropsType> = ({dialogsData,dialogsMessages}) => {
 	return (
 		<div className={s.dialogs_wrapper}>
 			<div className={s.dialogs_items}>
-				<DialogsItem id={dialogsData[0].id} title={dialogsData[0].name}/>
-				<DialogsItem id={dialogsData[1].id} title={dialogsData[1].name}/>
-				<DialogsItem id={dialogsData[2].id} title={dialogsData[2].name}/>
+				{dialogsData.map(el=><DialogsItem id={el.id} title={el.name}/>)}
 			</div>
 			<div className={s.dialogs_messages}>
-				<DialogsMessage title={dialogsMessages[0].title}/>
-				<DialogsMessage title={dialogsMessages[1].title}/>
-				<DialogsMessage title={dialogsMessages[2].title}/>
+				{dialogsMessages.map(el=><DialogsMessage title={el.title}/>)}
 			</div>
 		</div>
 	);

@@ -14,11 +14,13 @@ function App() {
 		{id: 1, name: "Minato"},
 		{id: 2, name: "Kakashi"},
 		{id: 3, name: "Rin"},
+		{id: 4, name: "Naruto"},
 	]
 	const dialogsMessages: DialogsMessagesType = [
 		{id: 1, title: "You and I will become Hokage."},
 		{id: 2,title: "Do you know what happens to people who break the rules?"},
 		{id: 3,title: "Become Hokage and show me how you'll save the world!"},
+		{id: 4,title: "Hey"},
 	]
 		return (
 		<BrowserRouter>
