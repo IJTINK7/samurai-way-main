@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {DialogsDataType, DialogsMessagesType, PostsInfoType} from "./state/state";
 
-export type DialogsDataType = {id: number, name: string}[]
-export type DialogsMessagesType = {id: number, title: string}[]
-export type PostsInfoType = {id: number, postText: string, likesCount: number}[]
+
 
 const postsInfo: PostsInfoType =[
 	{id: 1, postText: "I am Obito Uchiha and I will surpass you once I awaken my Sharingan!", likesCount: 3},

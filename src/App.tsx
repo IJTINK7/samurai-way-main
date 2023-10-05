@@ -6,7 +6,7 @@ import {Footer} from "./components/Footer/Footer";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Profile} from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {DialogsDataType, DialogsMessagesType, PostsInfoType} from "./index";
+import {DialogsDataType, DialogsMessagesType, PostsInfoType} from "./state/state";
 import {News} from "./components/News/News";
 import {Settings} from "./components/Settings/Settings";
 
