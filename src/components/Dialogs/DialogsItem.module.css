@@ -1,0 +1,14 @@
+.dialogs_item>a{
+	color: white;
+	text-decoration: none;
+}
+.dialogs_item>a.activeLink{
+	color: #FE0001;
+	text-decoration: none;
+}
+.dialogs_item>a.inactiveLink{
+	color: white;
+	text-decoration: none;
+}
+.dialogs_item>a.inactiveLink:hover {
+	color: #FE0001}

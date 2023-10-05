@@ -1,5 +1,5 @@
 import React from 'react';
-import s from "./Dialogs.module.css";
+import s from "./DialogsItem.module.css";
 import {NavLink} from "react-router-dom";
 
 type PropsType = {
@@ -8,6 +8,8 @@ type PropsType = {
 }
 export const DialogsItem: React.FC<PropsType> = ({id, title}) => {
 	return (
-		<div className={s.dialogs_item}><NavLink to={`/dialogs/${id}`} className={({isActive})=>isActive ? s.activeLink : s.navLink}>{title}</NavLink></div>
+		<div className={s.dialogs_item}>
+			<NavLink to={`/dialogs/${id}`} className={({isActive})=>isActive ? s.activeLink : s.inactiveLink}>{title}</NavLink>
+		</div>
 	);
 };
