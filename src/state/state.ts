@@ -1,12 +1,12 @@
 export type StateType = {
 	profilePage: {postsInfo: PostsInfoType}
 	dialogsPage:{
-		dialogsData: DialogsDataType
+		dialogsItems: DialogsItemsType
 		dialogsMessages: DialogsMessagesType
 	}
 }
 
-export type DialogsDataType = {id: number, name: string}[]
+export type DialogsItemsType = {id: number, name: string}[]
 export type DialogsMessagesType = {id: number, title: string}[]
 
 export type PostsInfoType = {id: number, postText: string, likesCount: number}[]
@@ -20,7 +20,7 @@ export const state: StateType = {
 		]
 	},
 	dialogsPage:{
-		dialogsData: [
+		dialogsItems: [
 			{id: 1, name: "Minato"},
 			{id: 2, name: "Kakashi"},
 			{id: 3, name: "Rin"},

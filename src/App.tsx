@@ -26,7 +26,9 @@ const App: React.FC<AppPropsType> = ({state})=>{
 						<Routes>
 							<Route path="/" element={<Profile postsInfo={state.profilePage.postsInfo}/>}/>
 							<Route path="/home/*" element={<Profile postsInfo={state.profilePage.postsInfo}/>}/>
-							<Route path="/dialogs/*" element={<Dialogs dialogsData={state.dialogsPage.dialogsData} dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
+							<Route path="/dialogs/*"
+								   element={<Dialogs dialogsItems={state.dialogsPage.dialogsItems}
+													 dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
 							<Route path="/news/*" element={<News/>}/>
 							<Route path="/settings/*" element={<Settings/>}/>
 						</Routes>
