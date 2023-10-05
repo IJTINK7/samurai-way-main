@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import {addPost, state} from "./state/state";
 
-ReactDOM.render(
-    <App state={state} addPost={addPost}/>,
-  document.getElementById('root')
-);
+const rerenderEntireTree = () => {
+	ReactDOM.render(
+		<App state={state} addPost={addPost}/>,
+		document.getElementById('root')
+	);
+}
+rerenderEntireTree()
