@@ -1,9 +1,16 @@
+import {rerenderEntireTree} from "../render";
+
 export type StateType = {
-	profilePage: {postsInfo: PostsInfoType}
-	dialogsPage:{
-		dialogsItems: DialogsItemsType
-		dialogsMessages: DialogsMessagesType
-	}
+	profilePage: ProfilePageType
+	dialogsPage: DialogsPageType
+}
+export type ProfilePageType = {
+	posts: PostsInfoType
+	newPostText: string
+}
+export type DialogsPageType = {
+	dialogsItems: DialogsItemsType
+	dialogsMessages: DialogsMessagesType
 }
 
 export type DialogsItemsType = {id: number, name: string}[]
@@ -13,11 +20,12 @@ export type PostsInfoType = {id: number, postText: string, likesCount: number}[]
 
 export const state: StateType = {
 	profilePage: {
-		postsInfo: [
+		posts: [
 			{id: 1, postText: "I am Obito Uchiha and I will surpass you once I awaken my Sharingan!", likesCount: 3},
 			{id: 2, postText: "There is no such thing as peace in this world — that is reality.", likesCount: 5},
 			{id: 3, postText: "I don’t feel pain, I don’t feel anything!", likesCount: 7},
-		]
+		],
+		newPostText: ""
 	},
 	dialogsPage:{
 		dialogsItems: [
@@ -32,7 +40,12 @@ export const state: StateType = {
 		]
 	}
 }
-export const addPost = (postMessage: string) => {
-	const newPost = {id: 4, postText: postMessage, likesCount:0}
-	return {...state, profilePage: {...state.profilePage, postsInfo: [...state.profilePage.postsInfo, newPost]} }
-}
+// export const addPost = (postMessage: string) => {
+// 	const newPost = {id: 4, postText: postMessage, likesCount:0}
+// 	return {...state, profilePage: {...state.profilePage, postsInfo: [...state.profilePage.posts, newPost]} }
+// 	rerenderEntireTree(state);
+// }
+// const updateNewPostText = (newText: string) => {
+// 	state.profilePage.newPostText = newText
+// 	rerenderEntireTree(state)_
+// }
