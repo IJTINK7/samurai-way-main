@@ -32,3 +32,7 @@ export const state: StateType = {
 		]
 	}
 }
+export const addPost = (postMessage: string) => {
+	const newPost = {id: 4, postText: postMessage, likesCount:0}
+	return {...state, profilePage: {...state.profilePage, postsInfo: [...state.profilePage.postsInfo, newPost]} }
+}
