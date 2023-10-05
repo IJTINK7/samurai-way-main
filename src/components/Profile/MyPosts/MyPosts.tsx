@@ -6,11 +6,13 @@ import {PostsInfoType} from "../../../state/state";
 
 
 type MyPostsPropsType={
-	postsInfo: PostsInfoType
+	posts: PostsInfoType
+	newPostText: string
 	addPost:(postMessage: string)=> void
+	updateNewPostText: (newText: string)=> void
 }
 
-export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo,addPost}) => {
+export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, addPost, updateNewPostText}) => {
 
 	const [postsValue, setPostsValue] = useState("")
 	// const [postTextValue, setPostTextValue] = useState("Add this string to new post")
@@ -29,24 +31,23 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo,addPost}) => {
 	// 	// setPostsValue(newPostElement.current.value)
 	// }
 	const addPostHandler = (postMessage: string) => {
-		debugger
 		addPost(postMessage)
 	}
 
-	const setPostsValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-		setPostsValue(e.currentTarget.value)
+	const onChangePostsValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
+		updateNewPostText(e.currentTarget.value)
 	}
 
 	return (
 		<div className={s.my_posts_wrapper}>
 				<div>My posts</div>
 				<div>
-					<input type="text" value={postsValue} className={s.my_posts_wrapper_input} onChange={setPostsValueHandler}/>
+					<input type="text" value={newPostText} className={s.my_posts_wrapper_input} onChange={onChangePostsValueHandler}/>
 					<button className={s.my_posts_wrapper_button} onClick={()=>addPostHandler("New Post Message")}>Add Post</button>
 				</div>
 
 				<div>
-					{postsInfo.map(el=><Post postText={el.postText} likesCount={el.likesCount}/>)}
+					{posts.map(el=><Post postText={el.postText} likesCount={el.likesCount}/>)}
 				</div>
 		</div>
 	);
