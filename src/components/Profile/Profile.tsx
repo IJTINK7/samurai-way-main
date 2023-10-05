@@ -6,16 +6,17 @@ import {PostsInfoType} from "../../state/state";
 
 type ProfilePropsType={
 	postsInfo: PostsInfoType
+	addPost:(postMessage: string)=> void
 }
 
-export const Profile: React.FC<ProfilePropsType> = ({postsInfo}) => {
+export const Profile: React.FC<ProfilePropsType> = ({postsInfo, addPost}) => {
 	return (
 		<div className={s.profile_wrapper}>
 			<div>
 				<ProfileHeaderInfo/>
 			</div>
 			<div>
-				<MyPosts postsInfo={postsInfo}/>
+				<MyPosts postsInfo={postsInfo} addPost={addPost}/>
 			</div>
 		</div>
 	);

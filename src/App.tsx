@@ -12,9 +12,10 @@ import {Settings} from "./components/Settings/Settings";
 
 type AppPropsType = {
 	state: StateType
+	addPost:(postMessage: string)=> void
 }
 
-const App: React.FC<AppPropsType> = ({state})=>{
+const App: React.FC<AppPropsType> = ({state, addPost})=>{
 
 		return (
 		<BrowserRouter>
@@ -24,8 +25,8 @@ const App: React.FC<AppPropsType> = ({state})=>{
 					<Navigation/>
 					<div className={"content_container"}>
 						<Routes>
-							<Route path="/" element={<Profile postsInfo={state.profilePage.postsInfo}/>}/>
-							<Route path="/home/*" element={<Profile postsInfo={state.profilePage.postsInfo}/>}/>
+							<Route path="/" element={<Profile postsInfo={state.profilePage.postsInfo} addPost={addPost}/>}/>
+							<Route path="/home/*" element={<Profile postsInfo={state.profilePage.postsInfo} addPost={addPost}/>}/>
 							<Route path="/dialogs/*"
 								   element={<Dialogs dialogsItems={state.dialogsPage.dialogsItems}
 													 dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>

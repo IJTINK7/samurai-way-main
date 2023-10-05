@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useRef, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 import {PostsInfoType} from "../../../state/state";
@@ -7,27 +7,31 @@ import {PostsInfoType} from "../../../state/state";
 
 type MyPostsPropsType={
 	postsInfo: PostsInfoType
+	addPost:(postMessage: string)=> void
 }
 
-export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo}) => {
+export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo,addPost}) => {
 
 	const [postsValue, setPostsValue] = useState("")
 	// const [postTextValue, setPostTextValue] = useState("Add this string to new post")
 
 	// let newPostElement = React.createRef<HTMLInputElement>(); // for class components
-	let newPostElement = useRef(null); // for functional components
+
+
+	// let newPostElement = useRef(null); // for functional components
+	// const addPost = (postMessage: string) => {
+	// 	if (newPostElement.current !== null) {
+	// 		console.log((typeof newPostElement.current))
+	// 	}
+	// 	console.log(postMessage)
+	// 	// let newPost = {id: v1(), postText: "NEW POST TEXT", likesCount: 0}
+	// 	// setPostsValueHandler(newPost)
+	// 	// setPostsValue(newPostElement.current.value)
+	// }
+
 
 	const setPostsValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		setPostsValue(e.currentTarget.value)
-	}
-	const addPost = (postMessage: string) => {
-		if (newPostElement.current !== null) {
-			console.log((typeof newPostElement.current))
-		}
-		console.log(postMessage)
-		// let newPost = {id: v1(), postText: "NEW POST TEXT", likesCount: 0}
-		// setPostsValueHandler(newPost)
-		// setPostsValue(newPostElement.current.value)
 	}
 
 	return (
