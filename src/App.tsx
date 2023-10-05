@@ -24,9 +24,9 @@ const App: React.FC<AppPropsType> = ({state})=>{
 					<Navigation/>
 					<div className={"content_container"}>
 						<Routes>
-							<Route path="/" element={<Profile postsInfo={state.postsInfo}/>}/>
-							<Route path="/home/*" element={<Profile postsInfo={state.postsInfo}/>}/>
-							<Route path="/dialogs/*" element={<Dialogs dialogsData={state.dialogsData} dialogsMessages={state.dialogsMessages}/>}/>
+							<Route path="/" element={<Profile postsInfo={state.profilePage.postsInfo}/>}/>
+							<Route path="/home/*" element={<Profile postsInfo={state.profilePage.postsInfo}/>}/>
+							<Route path="/dialogs/*" element={<Dialogs dialogsData={state.dialogsPage.dialogsData} dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
 							<Route path="/news/*" element={<News/>}/>
 							<Route path="/settings/*" element={<Settings/>}/>
 						</Routes>
