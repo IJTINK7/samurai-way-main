@@ -1,8 +1,8 @@
 import React from 'react';
 import s from "./Profile.module.css"
-import {PostsInfoType} from "../../index";
 import {ProfileHeaderInfo} from "./ProfileHeaderInfo/ProfileHeaderInfo";
 import {MyPosts} from "./MyPosts/MyPosts";
+import {PostsInfoType} from "../../state/state";
 
 type ProfilePropsType={
 	postsInfo: PostsInfoType
