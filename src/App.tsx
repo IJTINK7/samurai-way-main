@@ -6,17 +6,15 @@ import {Footer} from "./components/Footer/Footer";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Profile} from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {DialogsDataType, DialogsMessagesType, PostsInfoType} from "./state/state";
+import {StateType} from "./state/state";
 import {News} from "./components/News/News";
 import {Settings} from "./components/Settings/Settings";
 
 type AppPropsType = {
-	postsInfo: PostsInfoType
-	dialogsData: DialogsDataType
-	dialogsMessages: DialogsMessagesType
+	state: StateType
 }
 
-const App: React.FC<AppPropsType> = ({postsInfo, dialogsData,dialogsMessages})=>{
+const App: React.FC<AppPropsType> = ({state})=>{
 
 		return (
 		<BrowserRouter>
@@ -26,9 +24,9 @@ const App: React.FC<AppPropsType> = ({postsInfo, dialogsData,dialogsMessages})=>
 					<Navigation/>
 					<div className={"content_container"}>
 						<Routes>
-							<Route path="/" element={<Profile postsInfo={postsInfo}/>}/>
-							<Route path="/home/*" element={<Profile postsInfo={postsInfo}/>}/>
-							<Route path="/dialogs/*" element={<Dialogs dialogsData={dialogsData} dialogsMessages={dialogsMessages}/>}/>
+							<Route path="/" element={<Profile postsInfo={state.postsInfo}/>}/>
+							<Route path="/home/*" element={<Profile postsInfo={state.postsInfo}/>}/>
+							<Route path="/dialogs/*" element={<Dialogs dialogsData={state.dialogsData} dialogsMessages={state.dialogsMessages}/>}/>
 							<Route path="/news/*" element={<News/>}/>
 							<Route path="/settings/*" element={<Settings/>}/>
 						</Routes>

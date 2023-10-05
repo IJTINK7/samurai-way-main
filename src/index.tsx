@@ -5,6 +5,6 @@ import App from './App';
 import {state} from "./state/state";
 
 ReactDOM.render(
-    <App postsInfo={state.postsInfo} dialogsData={state.dialogsData} dialogsMessages={state.dialogsMessages}  />,
+    <App state={state} />,
   document.getElementById('root')
 );
