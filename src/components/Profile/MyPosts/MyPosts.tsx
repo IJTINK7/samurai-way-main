@@ -28,7 +28,10 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo,addPost}) => {
 	// 	// setPostsValueHandler(newPost)
 	// 	// setPostsValue(newPostElement.current.value)
 	// }
-
+	const addPostHandler = (postMessage: string) => {
+		debugger
+		addPost(postMessage)
+	}
 
 	const setPostsValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		setPostsValue(e.currentTarget.value)
@@ -39,7 +42,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo,addPost}) => {
 				<div>My posts</div>
 				<div>
 					<input type="text" value={postsValue} className={s.my_posts_wrapper_input} onChange={setPostsValueHandler}/>
-					<button className={s.my_posts_wrapper_button} onClick={()=>addPost("New Post Message")}>Add Post</button>
+					<button className={s.my_posts_wrapper_button} onClick={()=>addPostHandler("New Post Message")}>Add Post</button>
 				</div>
 
 				<div>
