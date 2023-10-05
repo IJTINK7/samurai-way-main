@@ -20,10 +20,11 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo}) => {
 	const setPostsValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		setPostsValue(e.currentTarget.value)
 	}
-	const sendPost = () => {
+	const addPost = (postMessage: string) => {
 		if (newPostElement.current !== null) {
 			console.log((typeof newPostElement.current))
 		}
+		console.log(postMessage)
 		// let newPost = {id: v1(), postText: "NEW POST TEXT", likesCount: 0}
 		// setPostsValueHandler(newPost)
 		// setPostsValue(newPostElement.current.value)
@@ -34,7 +35,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({postsInfo}) => {
 				<div>My posts</div>
 				<div>
 					<input type="text" value={postsValue} className={s.my_posts_wrapper_input} onChange={setPostsValueHandler}/>
-					<button className={s.my_posts_wrapper_button} onClick={sendPost}>Add Post</button>
+					<button className={s.my_posts_wrapper_button} onClick={()=>addPost("New Post Message")}>Add Post</button>
 				</div>
 
 				<div>
