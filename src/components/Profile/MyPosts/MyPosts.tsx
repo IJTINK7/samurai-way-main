@@ -1,7 +1,8 @@
 import React, {ChangeEvent, useState} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
-import {PostsInfoType} from "../../../App";
+import {PostsInfoType} from "../../../index";
+
 
 type MyPostsPropsType={
 	postsInfo: PostsInfoType
