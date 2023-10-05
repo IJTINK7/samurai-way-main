@@ -9,7 +9,7 @@ export type DialogsMessagesType = {id: number, title: string}[]
 
 export type PostsInfoType = {id: number, postText: string, likesCount: number}[]
 
-const state: StateType = {
+export const state: StateType = {
 	postsInfo: [
 		{id: 1, postText: "I am Obito Uchiha and I will surpass you once I awaken my Sharingan!", likesCount: 3},
 		{id: 2, postText: "There is no such thing as peace in this world — that is reality.", likesCount: 5},
