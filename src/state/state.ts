@@ -44,12 +44,12 @@ let rerenderEntireTree = () => {}
 export const addPost = () => {
 	let newPost = {id: 4, postText: state.profilePage.newPostText, likesCount: 0}
 	state.profilePage.posts.push(newPost)
-	rerenderEntireTree()
+	rerenderEntireTree(state)
 }
 
 export const updateNewPostText = (newText: string) => {
 	state.profilePage.newPostText = newText
-	rerenderEntireTree();
+	rerenderEntireTree(state);
 }
 
 export const subscribe = (observer: any)=> {
