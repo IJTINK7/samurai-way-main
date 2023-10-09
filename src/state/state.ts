@@ -40,12 +40,12 @@ export const state: StateType = {
 		]
 	}
 }
-// export const addPost = (postMessage: string) => {
-// 	const newPost = {id: 4, postText: postMessage, likesCount:0}
-// 	return {...state, profilePage: {...state.profilePage, postsInfo: [...state.profilePage.posts, newPost]} }
-// 	rerenderEntireTree(state);
-// }
-// const updateNewPostText = (newText: string) => {
-// 	state.profilePage.newPostText = newText
-// 	rerenderEntireTree(state)_
-// }
+export const addPost = (postMessage: string) => {
+	const newPost = {id: 4, postText: postMessage, likesCount:0}
+	return {...state, profilePage: {...state.profilePage, postsInfo: [...state.profilePage.posts, newPost]} }
+	rerenderEntireTree(state);
+}
+export const updateNewPostText = (newText: string) => {
+	state.profilePage.newPostText = newText
+	rerenderEntireTree(state);
+}
