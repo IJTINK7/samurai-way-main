@@ -55,3 +55,5 @@ export const updateNewPostText = (newText: string) => {
 export const subscribe = (observer: any)=> {
 	rerenderEntireTree = observer
 }
+
+// store - OOP object
