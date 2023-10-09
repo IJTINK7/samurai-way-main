@@ -1,6 +1,3 @@
-import {rerenderEntireTree} from "../render";
-import {v1} from "uuid";
-
 export type StateType = {
 	profilePage: ProfilePageType
 	dialogsPage: DialogsPageType
@@ -41,12 +38,20 @@ export const state: StateType = {
 		]
 	}
 }
-export const addPost = (postMessage: string) => {
-	let newPost = {id: 4, postText: postMessage, likesCount: 0}
+
+let rerenderEntireTree = () => {}
+
+export const addPost = () => {
+	let newPost = {id: 4, postText: state.profilePage.newPostText, likesCount: 0}
 	state.profilePage.posts.push(newPost)
-	rerenderEntireTree(state)
+	rerenderEntireTree()
 }
+
 export const updateNewPostText = (newText: string) => {
-	let newState = {...state, newPostText: newText}
-	rerenderEntireTree(newState);
+	state.profilePage.newPostText = newText
+	rerenderEntireTree();
+}
+
+export const subscribe = (observer: any)=> {
+	rerenderEntireTree = observer
 }
