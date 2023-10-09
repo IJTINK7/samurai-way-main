@@ -1,4 +1,5 @@
 import {rerenderEntireTree} from "../render";
+import {v1} from "uuid";
 
 export type StateType = {
 	profilePage: ProfilePageType
@@ -41,11 +42,11 @@ export const state: StateType = {
 	}
 }
 export const addPost = (postMessage: string) => {
-	const newPost = {id: 4, postText: postMessage, likesCount:0}
-	return {...state, profilePage: {...state.profilePage, postsInfo: [...state.profilePage.posts, newPost]} }
-	rerenderEntireTree(state);
+	let newPost = {id: 4, postText: postMessage, likesCount: 0}
+	state.profilePage.posts.push(newPost)
+	rerenderEntireTree(state)
 }
 export const updateNewPostText = (newText: string) => {
-	state.profilePage.newPostText = newText
-	rerenderEntireTree(state);
+	let newState = {...state, newPostText: newText}
+	rerenderEntireTree(newState);
 }
