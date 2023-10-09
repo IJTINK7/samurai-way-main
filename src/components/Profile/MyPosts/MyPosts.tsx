@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useRef} from 'react';
+import React, {useRef} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 import {PostsInfoType} from "../../../state/state";
@@ -14,8 +14,8 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, addPost
 
 	let inputRef = useRef<HTMLInputElement | null>(null); // for functional components
 
-	const onPostChange = (e:ChangeEvent<HTMLInputElement>) => {
-		updateNewPostText(e.currentTarget.value)
+	const onPostChange = () => {
+		updateNewPostText(inputRef.current ? inputRef.current.value : "")
 	}
 	const addPostHandler = () => {
 		addPost()
