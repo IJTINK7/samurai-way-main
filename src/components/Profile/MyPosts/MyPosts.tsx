@@ -15,7 +15,9 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, addPost
 	let inputRef = useRef<HTMLInputElement | null>(null); // for functional components
 
 	const onPostChange = () => {
-		updateNewPostText(inputRef.current ? inputRef.current.value : "")
+		if(inputRef.current){
+			updateNewPostText(inputRef.current.value)
+		}
 	}
 	const addPostHandler = () => {
 		addPost()
