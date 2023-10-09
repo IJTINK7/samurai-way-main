@@ -7,18 +7,19 @@ import {ProfilePageType} from "../../state/state";
 
 type ProfilePropsType={
 	profilePage: ProfilePageType
-	addPost:(postMessage: string)=> void
+	addPost:()=> void
+	newPostText: string
 	updateNewPostText: (newText: string)=> void
 }
 
-export const Profile: React.FC<ProfilePropsType> = ({profilePage, addPost, updateNewPostText}) => {
+export const Profile: React.FC<ProfilePropsType> = ({profilePage, addPost, newPostText, updateNewPostText}) => {
 	return (
 		<div className={s.profile_wrapper}>
 			<div>
 				<ProfileHeaderInfo/>
 			</div>
 			<div>
-				<MyPosts posts={profilePage.posts} newPostText={profilePage.newPostText} addPost={addPost} updateNewPostText={updateNewPostText}/>
+				<MyPosts posts={profilePage.posts} addPost={addPost} newPostText={newPostText} updateNewPostText={updateNewPostText}/>
 			</div>
 		</div>
 	);

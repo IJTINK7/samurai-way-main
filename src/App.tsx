@@ -12,7 +12,7 @@ import {Settings} from "./components/Settings/Settings";
 
 type AppPropsType = {
 	state: StateType
-	addPost:(postMessage: string)=> void
+	addPost:()=> void
 	updateNewPostText: (newText: string)=> void
 }
 
@@ -25,8 +25,8 @@ const App: React.FC<AppPropsType> = ({state, addPost, updateNewPostText})=>{
 					<Navigation/>
 					<div className={"content_container"}>
 						<Routes>
-							<Route path="/" element={<Profile profilePage={state.profilePage} addPost={addPost} updateNewPostText={updateNewPostText}/>}/>
-							<Route path="/home/*" element={<Profile profilePage={state.profilePage} addPost={addPost} updateNewPostText={updateNewPostText}/>}/>
+							<Route path="/" element={<Profile profilePage={state.profilePage} addPost={addPost} newPostText={state.profilePage.newPostText} updateNewPostText={updateNewPostText}/>}/>
+							<Route path="/home/*" element={<Profile profilePage={state.profilePage} addPost={addPost} newPostText={state.profilePage.newPostText} updateNewPostText={updateNewPostText}/>}/>
 							<Route path="/dialogs/*"
 								   element={<Dialogs dialogsItems={state.dialogsPage.dialogsItems}
 													 dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
