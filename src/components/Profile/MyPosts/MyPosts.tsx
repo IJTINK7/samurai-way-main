@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {ChangeEvent} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 import {PostsInfoType} from "../../../state/state";
@@ -12,12 +12,8 @@ type MyPostsPropsType={
 
 export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, addPost, updateNewPostText}) => {
 
-	let inputRef = useRef<HTMLInputElement | null>(null); // for functional components
-
-	const onPostChange = () => {
-		if(inputRef.current){
-			updateNewPostText(inputRef.current.value)
-		}
+	const onPostChangeHandler = (e : ChangeEvent<HTMLInputElement>) => {
+		updateNewPostText(e.currentTarget.value)
 	}
 	const addPostHandler = () => {
 		addPost()
@@ -28,7 +24,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, addPost
 		<div className={s.my_posts_wrapper}>
 				<div>My posts</div>
 				<div>
-					<input ref={inputRef} value={newPostText} className={s.my_posts_wrapper_input} onChange={onPostChange}/>
+					<input value={newPostText} className={s.my_posts_wrapper_input} onChange={onPostChangeHandler}/>
 					<button className={s.my_posts_wrapper_button} onClick={addPostHandler}>Add Post</button>
 				</div>
 
