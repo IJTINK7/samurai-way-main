@@ -8,7 +8,7 @@ import {StateType, store} from "./state/state";
 const rerenderEntireTree = (state: StateType) => {
 	return ReactDOM.render(
 		<BrowserRouter>
-			<App state={store.getState()} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}/>
+			<App state={state} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}/>
 		</BrowserRouter>,
 		document.getElementById('root')
 	);
