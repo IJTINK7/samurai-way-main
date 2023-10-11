@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
-import {addPost, state, StateType, subscribe, updateNewPostText} from "./state/state";
+import {StateType, store} from "./state/state";
 
 const rerenderEntireTree = (state: StateType) => {
 	return ReactDOM.render(
 		<BrowserRouter>
-			<App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
+			<App state={store.getState()} addPost={store.addPost} updateNewPostText={store.updateNewPostText}/>
 		</BrowserRouter>,
 		document.getElementById('root')
 	);
 }
-rerenderEntireTree(state);
-subscribe(rerenderEntireTree);
+rerenderEntireTree(store.getState());
+store.subscribe(rerenderEntireTree);
