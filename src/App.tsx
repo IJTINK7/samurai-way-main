@@ -12,31 +12,35 @@ import {Settings} from "./components/Settings/Settings";
 
 type AppPropsType = {
 	state: StateType
-	addPost:()=> void
-	updateNewPostText: (newText: string)=> void
+	addPost: () => void
+	updateNewPostText: (newText: string) => void
 }
 
-const App: React.FC<AppPropsType> = ({state, addPost, updateNewPostText})=>{
+const App: React.FC<AppPropsType> = ({state, addPost, updateNewPostText}) => {
 
-		return (
-			<div className="App">
-				<Header/>
-				<div className={"navigation_content_container"}>
-					<Navigation/>
-					<div className={"content_container"}>
-						<Routes>
-							<Route path="/" element={<Profile profilePage={state.profilePage} addPost={addPost} newPostText={state.profilePage.newPostText} updateNewPostText={updateNewPostText}/>}/>
-							<Route path="/home/*" element={<Profile profilePage={state.profilePage} addPost={addPost} newPostText={state.profilePage.newPostText} updateNewPostText={updateNewPostText}/>}/>
-							<Route path="/dialogs/*"
-								   element={<Dialogs dialogsItems={state.dialogsPage.dialogsItems}
-													 dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
-							<Route path="/news/*" element={<News/>}/>
-							<Route path="/settings/*" element={<Settings/>}/>
-						</Routes>
-					</div>
+	return (
+		<div className="App">
+			<Header/>
+			<div className={"navigation_content_container"}>
+				<Navigation/>
+				<div className={"content_container"}>
+					<Routes>
+						<Route path="/" element={<Profile profilePage={state.profilePage} addPost={addPost}
+														  newPostText={state.profilePage.newPostText}
+														  updateNewPostText={updateNewPostText}/>}/>
+						<Route path="/home/*" element={<Profile profilePage={state.profilePage} addPost={addPost}
+																newPostText={state.profilePage.newPostText}
+																updateNewPostText={updateNewPostText}/>}/>
+						<Route path="/dialogs/*"
+							   element={<Dialogs dialogsItems={state.dialogsPage.dialogsItems}
+												 dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
+						<Route path="/news/*" element={<News/>}/>
+						<Route path="/settings/*" element={<Settings/>}/>
+					</Routes>
 				</div>
-				<Footer/>
 			</div>
+			<Footer/>
+		</div>
 	);
 }
 

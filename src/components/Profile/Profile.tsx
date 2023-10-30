@@ -5,11 +5,11 @@ import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfilePageType} from "../../state/state";
 
 
-type ProfilePropsType={
+type ProfilePropsType = {
 	profilePage: ProfilePageType
-	addPost:()=> void
+	addPost: () => void
 	newPostText: string
-	updateNewPostText: (newText: string)=> void
+	updateNewPostText: (newText: string) => void
 }
 
 export const Profile: React.FC<ProfilePropsType> = ({profilePage, addPost, newPostText, updateNewPostText}) => {
@@ -19,7 +19,8 @@ export const Profile: React.FC<ProfilePropsType> = ({profilePage, addPost, newPo
 				<ProfileHeaderInfo/>
 			</div>
 			<div>
-				<MyPosts posts={profilePage.posts} addPost={addPost} newPostText={newPostText} updateNewPostText={updateNewPostText}/>
+				<MyPosts posts={profilePage.posts} addPost={addPost} newPostText={newPostText}
+						 updateNewPostText={updateNewPostText}/>
 			</div>
 		</div>
 	);
