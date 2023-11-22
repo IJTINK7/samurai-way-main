@@ -6,17 +6,16 @@ import {Footer} from "./components/Footer/Footer";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Profile} from "./components/Profile/Profile";
 import {Route, Routes} from "react-router-dom";
-import {StateType} from "./state/state";
+import {ActionType, StateType} from "./state/state";
 import {News} from "./components/News/News";
 import {Settings} from "./components/Settings/Settings";
 
 type AppPropsType = {
 	state: StateType
-	addPost: () => void
-	updateNewPostText: (newText: string) => void
+	dispatch:(action: ActionType)=> void
 }
 
-const App: React.FC<AppPropsType> = ({state, addPost, updateNewPostText}) => {
+const App: React.FC<AppPropsType> = ({state, dispatch}) => {
 
 	return (
 		<div className="App">
@@ -25,12 +24,8 @@ const App: React.FC<AppPropsType> = ({state, addPost, updateNewPostText}) => {
 				<Navigation/>
 				<div className={"content_container"}>
 					<Routes>
-						<Route path="/" element={<Profile profilePage={state.profilePage} addPost={addPost}
-														  newPostText={state.profilePage.newPostText}
-														  updateNewPostText={updateNewPostText}/>}/>
-						<Route path="/home/*" element={<Profile profilePage={state.profilePage} addPost={addPost}
-																newPostText={state.profilePage.newPostText}
-																updateNewPostText={updateNewPostText}/>}/>
+						<Route path="/" element={<Profile profilePage={state.profilePage} dispatch={dispatch}/>}/>
+						<Route path="/home/*" element={<Profile profilePage={state.profilePage} dispatch={dispatch}/>}/>
 						<Route path="/dialogs/*"
 							   element={<Dialogs dialogsItems={state.dialogsPage.dialogsItems}
 												 dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
