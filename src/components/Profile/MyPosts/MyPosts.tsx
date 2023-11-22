@@ -4,21 +4,19 @@ import {Post} from "./Post/Post";
 import {ActionType, PostsInfoType} from "../../../state/state";
 
 type MyPostsPropsType = {
-	posts: PostsInfoType
+	posts: PostsInfoType[]
 	newPostText: string
 	dispatch: (action: ActionType) => void
 }
 
-export const MyPosts: React.FC<MyPostsPropsType> = ({posts,newPostText, dispatch}) => {
+export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatch}) => {
 
 	const onPostChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		let newText = e.currentTarget.value
 		dispatch({type: "UPDATE-NEW-POST-TEXT", payload: {newText}})
 	}
 	const addPostHandler = () => {
-		let newText = ""
-		dispatch({type: "ADD-POST", payload:{newText}})
-		dispatch({type: "UPDATE-NEW-POST-TEXT", payload: {newText}})
+		dispatch({type: "ADD-POST"})
 	}
 
 	return (
