@@ -16,7 +16,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts,dispatch}) => {
 	}
 	const addPostHandler = () => {
 		let newText = ""
-		dispatch({type: "ADD-POST", payload:{newText}})
+		// dispatch({type: "ADD-POST", payload:{newText}})
 		dispatch({type: "UPDATE-NEW-POST-TEXT", payload: {newText}})
 	}
 
