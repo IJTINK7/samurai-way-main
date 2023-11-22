@@ -17,7 +17,7 @@ export const Profile: React.FC<ProfilePropsType> = ({profilePage, dispatch}) => 
 				<ProfileHeaderInfo/>
 			</div>
 			<div>
-				<MyPosts posts={profilePage.posts} dispatch={dispatch}/>
+				<MyPosts posts={profilePage.posts} newPostText={profilePage.newPostText} dispatch={dispatch}/>
 			</div>
 		</div>
 	);

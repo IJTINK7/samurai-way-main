@@ -5,10 +5,11 @@ import {ActionType, PostsInfoType} from "../../../state/state";
 
 type MyPostsPropsType = {
 	posts: PostsInfoType
+	newPostText: string
 	dispatch: (action: ActionType) => void
 }
 
-export const MyPosts: React.FC<MyPostsPropsType> = ({posts,dispatch}) => {
+export const MyPosts: React.FC<MyPostsPropsType> = ({posts,newPostText, dispatch}) => {
 
 	const onPostChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		let newText = e.currentTarget.value
@@ -16,7 +17,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts,dispatch}) => {
 	}
 	const addPostHandler = () => {
 		let newText = ""
-		// dispatch({type: "ADD-POST", payload:{newText}})
+		dispatch({type: "ADD-POST", payload:{newText}})
 		dispatch({type: "UPDATE-NEW-POST-TEXT", payload: {newText}})
 	}
 
@@ -24,7 +25,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts,dispatch}) => {
 		<div className={s.my_posts_wrapper}>
 			<div>My posts</div>
 			<div>
-				<input value={""} className={s.my_posts_wrapper_input} onChange={onPostChangeHandler}/>
+				<input value={newPostText} className={s.my_posts_wrapper_input} onChange={onPostChangeHandler}/>
 				<button className={s.my_posts_wrapper_button} onClick={addPostHandler}>Add Post</button>
 			</div>
 
