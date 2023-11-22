@@ -64,7 +64,7 @@ export const store: StoreType = {
 			case "ADD-POST":
 				let newPost = {id: 4, postText: this._state.profilePage.newPostText, likesCount: 0}
 				this._state.profilePage.posts.push(newPost)
-				this._state.profilePage.newPostText = ""
+				this._state.profilePage.newPostText = action.payload.newText
 				this._callSubscriber(this._state)
 				return
 			case "UPDATE-NEW-POST-TEXT":
