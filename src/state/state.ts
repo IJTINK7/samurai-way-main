@@ -18,7 +18,7 @@ export type PostsInfoType = { id: number, postText: string, likesCount: number }
 export type StoreType = {
 	_state: StateType
 	getState: ()=> StateType
-	callSubscriber:(state: StateType)=> void
+	_callSubscriber:(state: StateType)=> void
 	addPost:()=> void
 	updateNewPostText:(newText: string)=> void
 	subscribe:(observer: any)=> void
@@ -50,20 +50,20 @@ export const store: StoreType = {
 	getState(){
 		return this._state
 	},
-	callSubscriber (){
-		console.log("123")
+	_callSubscriber (){
+		console.log("State was changed")
 	},
 	addPost(){
 		let newPost = {id: 4, postText: this._state.profilePage.newPostText, likesCount: 0}
 		this._state.profilePage.posts.push(newPost)
-		this.callSubscriber(this._state)
+		this._callSubscriber(this._state)
 	},
 	updateNewPostText(newText){
 		this._state.profilePage.newPostText = newText
-		this.callSubscriber(this._state);
+		this._callSubscriber(this._state);
 	},
 	subscribe(observer: any){
-		this.callSubscriber = observer
+		this._callSubscriber = observer
 	},
 }
 // store - OOP object
