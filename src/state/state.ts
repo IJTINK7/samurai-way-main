@@ -3,18 +3,18 @@ export type StateType = {
 	dialogsPage: DialogsPageType
 }
 export type ProfilePageType = {
-	posts: PostsInfoType
+	posts: PostsInfoType[]
 	newPostText: string
 }
 export type DialogsPageType = {
-	dialogsItems: DialogsItemsType
-	dialogsMessages: DialogsMessagesType
+	dialogsItems: DialogsItemsType[]
+	dialogsMessages: DialogsMessagesType[]
 }
 
-export type DialogsItemsType = { id: number, name: string }[]
-export type DialogsMessagesType = { id: number, title: string }[]
+export type DialogsItemsType = { id: number, name: string }
+export type DialogsMessagesType = { id: number, title: string }
 
-export type PostsInfoType = { id: number, postText: string, likesCount: number }[]
+export type PostsInfoType = { id: number, postText: string, likesCount: number }
 export type StoreType = {
 	_state: StateType
 	_callSubscriber:(state: StateType)=> void
@@ -22,11 +22,15 @@ export type StoreType = {
 	subscribe:(observer: any)=> void
 	dispatch:(action: ActionType)=> void
 }
-export type ActionType = {
-	type: "ADD-POST" | "UPDATE-NEW-POST-TEXT"
+export type ActionType = AddPostActionType | UpdateNewPostTextActionType
+
+export type AddPostActionType = {
+	type: "ADD-POST"
+}
+export type UpdateNewPostTextActionType = {
+	type: "UPDATE-NEW-POST-TEXT"
 	payload: {newText: string}
 }
-
 export const store: StoreType = {
 	_state: {
 		profilePage:{
@@ -62,14 +66,15 @@ export const store: StoreType = {
 	dispatch(action) {
 		switch (action.type) {
 			case "ADD-POST":
-				let newPost = {id: 4, postText: this._state.profilePage.newPostText, likesCount: 0}
-				this._state.profilePage.posts.push(newPost)
-				this._state.profilePage.newPostText = action.payload.newText
-				this._callSubscriber(this._state)
-				return
-			case "UPDATE-NEW-POST-TEXT":
-				this._state.profilePage.newPostText = action.payload.newText
+				let newPost: PostsInfoType = {id: 4, postText: this._state.profilePage.newPostText, likesCount: 0};
+				this._state.profilePage.posts.push(newPost);
+				this._state.profilePage.newPostText = "";
 				this._callSubscriber(this._state);
+				return;
+			case "UPDATE-NEW-POST-TEXT":
+				this._state.profilePage.newPostText = action.payload.newText;
+				this._callSubscriber(this._state);
+				return;
 		}
 	}
 }
