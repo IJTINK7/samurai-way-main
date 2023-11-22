@@ -24,7 +24,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts,dispatch}) => {
 		<div className={s.my_posts_wrapper}>
 			<div>My posts</div>
 			<div>
-				<input value={"newPostText"} className={s.my_posts_wrapper_input} onChange={onPostChangeHandler}/>
+				<input value={""} className={s.my_posts_wrapper_input} onChange={onPostChangeHandler}/>
 				<button className={s.my_posts_wrapper_button} onClick={addPostHandler}>Add Post</button>
 			</div>
 
