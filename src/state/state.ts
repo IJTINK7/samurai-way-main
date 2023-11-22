@@ -17,11 +17,14 @@ export type DialogsMessagesType = { id: number, title: string }[]
 export type PostsInfoType = { id: number, postText: string, likesCount: number }[]
 export type StoreType = {
 	_state: StateType
-	getState: ()=> StateType
 	_callSubscriber:(state: StateType)=> void
-	addPost:()=> void
-	updateNewPostText:(newText: string)=> void
+	getState: ()=> StateType
 	subscribe:(observer: any)=> void
+	dispatch:(action: ActionType)=> void
+}
+export type ActionType = {
+	type: "ADD-POST" | "UPDATE-NEW-POST-TEXT"
+	payload: {newText: string}
 }
 
 export const store: StoreType = {
@@ -47,23 +50,27 @@ export const store: StoreType = {
 			]
 		},
 	},
-	getState(){
-		return this._state
-	},
 	_callSubscriber (){
 		console.log("State was changed")
 	},
-	addPost(){
-		let newPost = {id: 4, postText: this._state.profilePage.newPostText, likesCount: 0}
-		this._state.profilePage.posts.push(newPost)
-		this._callSubscriber(this._state)
-	},
-	updateNewPostText(newText){
-		this._state.profilePage.newPostText = newText
-		this._callSubscriber(this._state);
+	getState(){
+		return this._state
 	},
 	subscribe(observer: any){
 		this._callSubscriber = observer
 	},
+	dispatch(action) {
+		switch (action.type) {
+			case "ADD-POST":
+				let newPost = {id: 4, postText: this._state.profilePage.newPostText, likesCount: 0}
+				this._state.profilePage.posts.push(newPost)
+				this._state.profilePage.newPostText = ""
+				this._callSubscriber(this._state)
+				return
+			case "UPDATE-NEW-POST-TEXT":
+				this._state.profilePage.newPostText = action.payload.newText
+				this._callSubscriber(this._state);
+		}
+	}
 }
 // store - OOP object
