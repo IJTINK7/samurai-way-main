@@ -9,6 +9,10 @@ type MyPostsPropsType = {
 	dispatch: (action: ActionType) => void
 }
 
+let addPostAC = () => {
+	return {type: "ADD-POST"}
+}
+
 export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatch}) => {
 
 	const onPostChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +20,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatc
 		dispatch({type: "UPDATE-NEW-POST-TEXT", payload: {newText}})
 	}
 	const addPostHandler = () => {
-		dispatch({type: "ADD-POST"})
+		dispatch(addPostAC())
 	}
 
 	return (
