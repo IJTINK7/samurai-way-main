@@ -78,4 +78,10 @@ export const store: StoreType = {
 		}
 	}
 }
+export const addPostAC = () => {
+	return {type: "ADD-POST"} as const
+}
+export const onPostChangeHandlerAC = (newText: string) => {
+	return {type: "UPDATE-NEW-POST-TEXT", payload: {newText}} as const
+}
 // store - OOP object

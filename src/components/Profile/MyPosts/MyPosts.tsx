@@ -1,7 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
-import {ActionType, PostsInfoType} from "../../../state/state";
+import {ActionType, addPostAC, onPostChangeHandlerAC, PostsInfoType} from "../../../state/state";
 
 type MyPostsPropsType = {
 	posts: PostsInfoType[]
@@ -9,12 +9,7 @@ type MyPostsPropsType = {
 	dispatch: (action: ActionType) => void
 }
 
-let addPostAC = () => {
-	return {type: "ADD-POST"}
-}
-let onPostChangeHandlerAC = () => {
-	return {type: "UPDATE-NEW-POST-TEXT", payload: {newText}}
-}
+
 
 export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatch}) => {
 
