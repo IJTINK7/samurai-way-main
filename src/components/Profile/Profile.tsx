@@ -7,7 +7,7 @@ import {ActionType, ProfilePageType} from "../../state/state";
 
 type ProfilePropsType = {
 	profilePage: ProfilePageType
-	dispatch:(action: ActionType)=> void
+	dispatch: (action: ActionType) => void
 }
 
 export const Profile: React.FC<ProfilePropsType> = ({profilePage, dispatch}) => {

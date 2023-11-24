@@ -9,8 +9,6 @@ type MyPostsPropsType = {
 	dispatch: (action: ActionType) => void
 }
 
-
-
 export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatch}) => {
 
 	const onPostChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

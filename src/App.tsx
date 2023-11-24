@@ -12,7 +12,7 @@ import {Settings} from "./components/Settings/Settings";
 
 type AppPropsType = {
 	state: StateType
-	dispatch:(action: ActionType)=> void
+	dispatch: (action: ActionType) => void
 }
 
 const App: React.FC<AppPropsType> = ({state, dispatch}) => {
