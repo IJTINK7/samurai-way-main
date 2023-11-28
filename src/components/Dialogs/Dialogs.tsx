@@ -4,7 +4,7 @@ import {DialogsItem} from "./DialogsItem";
 import {DialogsMessage} from "./DialogsMessage";
 import {DialogsPageType} from "../../state/state";
 
-export const Dialogs: React.FC<DialogsPageType> = ({dialogsItems, dialogsMessages}) => {
+export const Dialogs: React.FC<DialogsPageType> = ({dialogsItems, dialogsMessages, newMessageBody}) => {
 	return (
 		<div className={s.dialogs_wrapper}>
 			<div className={s.dialogs_items}>

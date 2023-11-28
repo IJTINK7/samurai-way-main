@@ -28,7 +28,9 @@ const App: React.FC<AppPropsType> = ({state, dispatch}) => {
 						<Route path="/home/*" element={<Profile profilePage={state.profilePage} dispatch={dispatch}/>}/>
 						<Route path="/dialogs/*"
 							   element={<Dialogs dialogsItems={state.dialogsPage.dialogsItems}
-												 dialogsMessages={state.dialogsPage.dialogsMessages}/>}/>
+												 dialogsMessages={state.dialogsPage.dialogsMessages}
+												 newMessageBody={state.dialogsPage.newMessageBody}
+							   />}/>
 						<Route path="/news/*" element={<News/>}/>
 						<Route path="/settings/*" element={<Settings/>}/>
 					</Routes>
