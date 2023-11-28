@@ -23,7 +23,7 @@ export type StoreType = {
 	subscribe: (observer: any) => void
 	dispatch: (action: ActionType) => void
 }
-export type ActionType = AddPostActionType | UpdateNewPostTextActionType | UpdateNewMessageBodyActionType
+export type ActionType = AddPostActionType | UpdateNewPostTextActionType | UpdateNewMessageBodyActionType | SendMessageActionType
 
 export type AddPostActionType = {
 	type: "ADD-POST"
@@ -35,6 +35,9 @@ export type UpdateNewPostTextActionType = {
 export type UpdateNewMessageBodyActionType = {
 	type: "UPDATE-NEW-MESSAGE-BODY"
 	payload: { body: string }
+}
+export type SendMessageActionType = {
+	type: "SEND-MESSAGE"
 }
 export const store: StoreType = {
 	_state: {
@@ -89,6 +92,12 @@ export const store: StoreType = {
 				this._state.dialogsPage.newMessageBody = action.payload.body
 				this._callSubscriber(this._state)
 				return;
+			case "SEND-MESSAGE":
+				let body = this._state.dialogsPage.newMessageBody;
+				this._state.dialogsPage.newMessageBody = ""
+				this._state.dialogsPage.dialogsMessages.push({id:4, title: body})
+				this._callSubscriber(this._state)
+				return;
 		}
 	}
 }
@@ -107,6 +116,11 @@ export const updateNewMessageBodyAC = (body: string) => {
 	return {
 		type: "UPDATE-NEW-MESSAGE-BODY",
 		payload:{body}
+	} as const
+}
+export const sendMessageAC = () => {
+	return {
+		type: "SEND-MESSAGE",
 	} as const
 }
 // store - OOP object
