@@ -1,3 +1,6 @@
+import {profileReducer} from "./profileReducer";
+import {dialogsReducer} from "./dialogsReducer";
+
 export type StateType = {
 	profilePage: ProfilePageType
 	dialogsPage: DialogsPageType
@@ -77,28 +80,8 @@ export const store: StoreType = {
 		this._callSubscriber = observer
 	},
 	dispatch(action) {
-		switch (action.type) {
-			case "ADD-POST":
-				let newPost: PostsInfoType = {id: 4, postText: this._state.profilePage.newPostText, likesCount: 0};
-				this._state.profilePage.posts.push(newPost);
-				this._state.profilePage.newPostText = "";
-				this._callSubscriber(this._state);
-				return;
-			case "UPDATE-NEW-POST-TEXT":
-				this._state.profilePage.newPostText = action.payload.newText;
-				this._callSubscriber(this._state);
-				return;
-			case "UPDATE-NEW-MESSAGE-BODY":
-				this._state.dialogsPage.newMessageBody = action.payload.body
-				this._callSubscriber(this._state)
-				return;
-			case "SEND-MESSAGE":
-				let body = this._state.dialogsPage.newMessageBody;
-				this._state.dialogsPage.newMessageBody = ""
-				this._state.dialogsPage.dialogsMessages.push({id:4, title: body})
-				this._callSubscriber(this._state)
-				return;
-		}
+		this._state.profilePage = profileReducer(this._state.profilePage, action);
+		this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
 	}
 }
 export const addPostAC = () => {
