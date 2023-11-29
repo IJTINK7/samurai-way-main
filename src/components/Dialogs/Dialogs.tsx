@@ -11,8 +11,7 @@ type DialogsPageMainType ={
 
 export const Dialogs: React.FC<DialogsPageMainType> = ({dialogsPage, dispatch}) => {
 	const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-		let body = e.currentTarget.value
-		dispatch(updateNewMessageBodyAC(body))
+		dispatch(updateNewMessageBodyAC(e.currentTarget.value))
 	}
 	const onSendMessageClick = () => {
 		dispatch(sendMessageAC())
