@@ -15,10 +15,10 @@ export const profileReducer = (state: ProfilePageType, action: ProfileReducerMai
 	}
 }
 
-export type ProfileReducerMainActionType = AddPostAC | OnPostChangeHandlerAC
+export type ProfileReducerMainActionType = AddPostACType | OnPostChangeHandlerACType
 
-type AddPostAC = ReturnType<typeof addPostAC>
-type OnPostChangeHandlerAC = ReturnType<typeof onPostChangeHandlerAC>
+export type AddPostACType = ReturnType<typeof addPostAC>
+export type OnPostChangeHandlerACType = ReturnType<typeof onPostChangeHandlerAC>
 
 export const addPostAC = () => {
 	return {

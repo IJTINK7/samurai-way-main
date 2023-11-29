@@ -1,5 +1,5 @@
-import {profileReducer} from "./profileReducer";
-import {dialogsReducer} from "./dialogsReducer";
+import {profileReducer, ProfileReducerMainActionType} from "./profileReducer";
+import {dialogsReducer, DialogsReducerMainActionType,} from "./dialogsReducer";
 import {sidebarReducer} from "./sidebarReducer";
 
 export type StateType = {
@@ -28,22 +28,8 @@ export type StoreType = {
 	subscribe: (observer: any) => void
 	dispatch: (action: ActionType) => void
 }
-export type ActionType = AddPostActionType | UpdateNewPostTextActionType | UpdateNewMessageBodyActionType | SendMessageActionType
 
-export type AddPostActionType = {
-	type: "ADD-POST"
-}
-export type UpdateNewPostTextActionType = {
-	type: "UPDATE-NEW-POST-TEXT"
-	payload: { newText: string }
-}
-export type UpdateNewMessageBodyActionType = {
-	type: "UPDATE-NEW-MESSAGE-BODY"
-	payload: { body: string }
-}
-export type SendMessageActionType = {
-	type: "SEND-MESSAGE"
-}
+export type ActionType = ProfileReducerMainActionType & DialogsReducerMainActionType
 export const store: StoreType = {
 	_state: {
 		profilePage: {
@@ -89,26 +75,5 @@ export const store: StoreType = {
 		this._callSubscriber(this._state)
 	}
 }
-export const addPostAC = () => {
-	return {
-		type: "ADD-POST"
-	} as const
-}
-export const onPostChangeHandlerAC = (newText: string) => {
-	return {
-		type: "UPDATE-NEW-POST-TEXT",
-		payload: {newText}
-	} as const
-}
-export const updateNewMessageBodyAC = (body: string) => {
-	return {
-		type: "UPDATE-NEW-MESSAGE-BODY",
-		payload:{body}
-	} as const
-}
-export const sendMessageAC = () => {
-	return {
-		type: "SEND-MESSAGE",
-	} as const
-}
+
 // store - OOP object

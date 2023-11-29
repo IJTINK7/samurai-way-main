@@ -15,10 +15,10 @@ export const dialogsReducer = (state: DialogsPageType, action: DialogsReducerMai
 	}
 }
 
-export type DialogsReducerMainActionType = UpdateNewMessageBodyAC | SendMessageAC
+export type DialogsReducerMainActionType = UpdateNewMessageBodyACType | SendMessageACType
 
-type UpdateNewMessageBodyAC = ReturnType<typeof updateNewMessageBodyAC>
-type SendMessageAC = ReturnType<typeof sendMessageAC>
+export type UpdateNewMessageBodyACType = ReturnType<typeof updateNewMessageBodyAC>
+export type SendMessageACType = ReturnType<typeof sendMessageAC>
 
 export const updateNewMessageBodyAC = (body: string) => {
 	return {
