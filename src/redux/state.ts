@@ -4,6 +4,7 @@ import {dialogsReducer} from "./dialogsReducer";
 export type StateType = {
 	profilePage: ProfilePageType
 	dialogsPage: DialogsPageType
+	sidebar: {}
 }
 export type ProfilePageType = {
 	posts: PostsInfoType[]
@@ -69,6 +70,7 @@ export const store: StoreType = {
 			],
 			newMessageBody: ""
 		},
+		sidebar: {}
 	},
 	_callSubscriber() {
 		console.log("State was changed")
