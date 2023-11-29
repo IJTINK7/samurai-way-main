@@ -6,7 +6,7 @@ import {Footer} from "./components/Footer/Footer";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Profile} from "./components/Profile/Profile";
 import {Route, Routes} from "react-router-dom";
-import {ActionType, StateType} from "./state/state";
+import {ActionType, StateType} from "./redux/state";
 import {News} from "./components/News/News";
 import {Settings} from "./components/Settings/Settings";
 
