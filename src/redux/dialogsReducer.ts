@@ -1,4 +1,6 @@
-export const dialogsReducer = (state: any, action: any) => {
+import {DialogsPageType} from "./state";
+
+export const dialogsReducer = (state: DialogsPageType, action: DialogsReducerMainActionType):DialogsPageType  => {
 	switch (action.type) {
 		case "UPDATE-NEW-MESSAGE-BODY":
 			state.newMessageBody = action.payload.body
@@ -11,4 +13,21 @@ export const dialogsReducer = (state: any, action: any) => {
 		default:
 			return state;
 	}
+}
+
+export type DialogsReducerMainActionType = UpdateNewMessageBodyAC | SendMessageAC
+
+type UpdateNewMessageBodyAC = ReturnType<typeof updateNewMessageBodyAC>
+type SendMessageAC = ReturnType<typeof sendMessageAC>
+
+export const updateNewMessageBodyAC = (body: string) => {
+	return {
+		type: "UPDATE-NEW-MESSAGE-BODY",
+		payload:{body}
+	} as const
+}
+export const sendMessageAC = () => {
+	return {
+		type: "SEND-MESSAGE",
+	} as const
 }
