@@ -19,6 +19,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatc
 		dispatch(onPostChangeHandlerAC(e.currentTarget.value))
 	}
 	const addPostHandler = () => {
+		debugger
 		dispatch(addPostAC())
 	}
 
@@ -31,7 +32,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatc
 			</div>
 
 			<div>
-				{posts.map(el => <Post postText={el.postText} likesCount={el.likesCount}/>)}
+				{posts.map(el => <Post key={el.id} postText={el.postText} likesCount={el.likesCount}/>)}
 			</div>
 		</div>
 	);
