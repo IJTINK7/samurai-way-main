@@ -1,15 +1,21 @@
 import {PostsInfoType, ProfilePageType} from "./state";
 
-export const profileReducer = (state: ProfilePageType, action: ProfileReducerMainActionType):ProfilePageType => {
+let initialState: ProfilePageType = {
+	posts: [],
+	newPostText: ""
+}
+
+export const profileReducer = (state: ProfilePageType = initialState, action: ProfileReducerMainActionType):ProfilePageType => {
 	switch (action.type) {
 		case "ADD-POST" :
 			let newPost: PostsInfoType = {id: 4, postText: state.newPostText, likesCount: 0};
-			state.posts.push(newPost);
-			state.newPostText = "";
-			return state;
+			return {
+				...state, posts: [...state.posts, newPost], newPostText: ""
+			}
 		case "UPDATE-NEW-POST-TEXT":
-			state.newPostText = action.payload.newText;
-			return state;
+			return {
+				...state, newPostText: action.payload.newText
+			}
 		default:
 			return state;
 	}
