@@ -4,6 +4,8 @@ let initialState: ProfilePageType = {
 	posts: [],
 	newPostText: ""
 }
+let ADD_POST = "ADD-POST"
+let UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 
 export const profileReducer = (state: ProfilePageType = initialState, action: ProfileReducerMainActionType):ProfilePageType => {
 	switch (action.type) {
@@ -28,12 +30,12 @@ export type OnPostChangeHandlerACType = ReturnType<typeof onPostChangeHandlerAC>
 
 export const addPostAC = () => {
 	return {
-		type: "ADD-POST"
+		type: ADD_POST
 	} as const
 }
 export const onPostChangeHandlerAC = (newText: string) => {
 	return {
-		type: "UPDATE-NEW-POST-TEXT",
+		type: UPDATE_NEW_POST_TEXT,
 		payload: {newText}
 	} as const
 }
