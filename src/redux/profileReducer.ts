@@ -1,13 +1,11 @@
-import {PostsInfoType, ProfilePageType} from "./state";
+import {ActionType, PostsInfoType, ProfilePageType} from "./state";
 
 let initialState: ProfilePageType = {
 	posts: [],
 	newPostText: ""
 }
-let ADD_POST = "ADD-POST"
-let UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 
-export const profileReducer = (state: ProfilePageType = initialState, action: ProfileReducerMainActionType):ProfilePageType => {
+export const profileReducer = (state: ProfilePageType = initialState, action: ActionType):ProfilePageType => {
 	switch (action.type) {
 		case "ADD-POST" :
 			let newPost: PostsInfoType = {id: 4, postText: state.newPostText, likesCount: 0};
@@ -30,12 +28,12 @@ export type OnPostChangeHandlerACType = ReturnType<typeof onPostChangeHandlerAC>
 
 export const addPostAC = () => {
 	return {
-		type: ADD_POST
+		type: "ADD-POST"
 	} as const
 }
 export const onPostChangeHandlerAC = (newText: string) => {
 	return {
-		type: UPDATE_NEW_POST_TEXT,
+		type: "UPDATE-NEW-POST-TEXT",
 		payload: {newText}
 	} as const
 }
