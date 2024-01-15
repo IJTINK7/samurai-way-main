@@ -14,7 +14,7 @@ export const dialogsReducer = (state: DialogsPageType = initialState, action: Ac
 			}
 		case "SEND-MESSAGE":
 			let body = state.newMessageBody;
-			let newMessage = {id: 4, title: body}
+			let newMessage = {id: Number(Date.now()), title: body}
 			return {
 				...state,
 				newMessageBody: "",
