@@ -1,4 +1,4 @@
-import {DialogsPageType} from "./state";
+import {ActionType, DialogsPageType} from "./state";
 
 let initialState: DialogsPageType = {
 	dialogsItems: [],
@@ -6,7 +6,7 @@ let initialState: DialogsPageType = {
 	newMessageBody: ""
 }
 
-export const dialogsReducer = (state: DialogsPageType = initialState, action: DialogsReducerMainActionType):DialogsPageType  => {
+export const dialogsReducer = (state: DialogsPageType = initialState, action: ActionType):DialogsPageType  => {
 	switch (action.type) {
 		case "UPDATE-NEW-MESSAGE-BODY":
 			return {
