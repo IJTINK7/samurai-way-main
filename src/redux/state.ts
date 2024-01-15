@@ -29,7 +29,8 @@ export type StoreType = {
 	dispatch: (action: ActionType) => void
 }
 
-export type ActionType = ProfileReducerMainActionType & DialogsReducerMainActionType
+export type ActionType = ProfileReducerMainActionType | DialogsReducerMainActionType
+
 export const store: StoreType = {
 	_state: {
 		profilePage: {
