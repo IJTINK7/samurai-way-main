@@ -19,7 +19,6 @@ export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatc
 		dispatch(onPostChangeHandlerAC(e.currentTarget.value))
 	}
 	const addPostHandler = () => {
-		debugger
 		dispatch(addPostAC())
 	}
 
