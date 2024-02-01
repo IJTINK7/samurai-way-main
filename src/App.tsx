@@ -9,9 +9,10 @@ import {Route, Routes} from "react-router-dom";
 import {ActionType, StateType} from "./redux/store";
 import {News} from "./components/News/News";
 import {Settings} from "./components/Settings/Settings";
+import {AppRootState} from "./redux/redux-store";
 
 type AppPropsType = {
-	state: StateType
+	state: AppRootState
 	dispatch: (action: ActionType) => void
 }
 
