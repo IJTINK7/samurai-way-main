@@ -1,7 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
-import {ActionType, PostsInfoType} from "../../../redux/state";
+import {ActionType, PostsInfoType} from "../../../redux/store";
 import {
 	addPostAC,
 	onPostChangeHandlerAC,

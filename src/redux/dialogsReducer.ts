@@ -1,4 +1,4 @@
-import {ActionType, DialogsPageType} from "./state";
+import {ActionType, DialogsPageType} from "./store";
 
 let initialState: DialogsPageType = {
 	dialogsItems: [],
