@@ -1,25 +1,23 @@
 import React, {ChangeEvent} from 'react';
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
-import {ActionType, PostsInfoType} from "../../../redux/store";
-import {
-	addPostAC,
-	onPostChangeHandlerAC,
-} from "../../../redux/profileReducer";
+import {PostsInfoType} from "../../../redux/store";
+
 
 type MyPostsPropsType = {
 	posts: PostsInfoType[]
 	newPostText: string
-	dispatch: (action: ActionType) => void
+	updateNewPostText: (text: string) => void
+	addPost: () => void
 }
 
-export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatch}) => {
+export const MyPosts: React.FC<MyPostsPropsType> = ({posts, newPostText, updateNewPostText, addPost}) => {
 
-	const onPostChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-		dispatch(onPostChangeHandlerAC(e.currentTarget.value))
-	}
 	const addPostHandler = () => {
-		dispatch(addPostAC())
+		addPost()
+	}
+	const onPostChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+		updateNewPostText(e.currentTarget.value)
 	}
 
 	return (
