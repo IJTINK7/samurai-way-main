@@ -6,18 +6,10 @@ import {Footer} from "./components/Footer/Footer";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Profile} from "./components/Profile/Profile";
 import {Route, Routes} from "react-router-dom";
-import {ActionType, StateType} from "./redux/store";
 import {News} from "./components/News/News";
 import {Settings} from "./components/Settings/Settings";
-import {AppRootState} from "./redux/redux-store";
 
-type AppPropsType = {
-	state: AppRootState
-	dispatch: (action: ActionType) => void
-}
-
-const App: React.FC<AppPropsType> = ({state, dispatch}) => {
-
+const App = () => {
 	return (
 		<div className="App">
 			<Header/>
@@ -25,12 +17,10 @@ const App: React.FC<AppPropsType> = ({state, dispatch}) => {
 				<Navigation/>
 				<div className={"content_container"}>
 					<Routes>
-						<Route path="/" element={<Profile profilePage={state.profilePage} dispatch={dispatch}/>}/>
-						<Route path="/home/*" element={<Profile profilePage={state.profilePage} dispatch={dispatch}/>}/>
+						<Route path="/" element={<Profile/>}/>
+						<Route path="/home/*" element={<Profile/>}/>
 						<Route path="/dialogs/*"
-							   element={<Dialogs dialogsPage={state.dialogsPage}
-												 dispatch={dispatch}
-							   />}/>
+							   element={<Dialogs/>}/>
 						<Route path="/news/*" element={<News/>}/>
 						<Route path="/settings/*" element={<Settings/>}/>
 					</Routes>

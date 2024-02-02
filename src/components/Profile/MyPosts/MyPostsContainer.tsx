@@ -1,18 +1,19 @@
 import React from 'react';
-import {ActionType, PostsInfoType} from "../../../redux/store";
+import {PostsInfoType} from "../../../redux/store";
 import {
 	addPostAC,
 	onPostChangeHandlerAC,
 } from "../../../redux/profileReducer";
 import {MyPosts} from "./MyPosts";
+import {useDispatch} from "react-redux";
 
 type MyPostsPropsType = {
 	posts: PostsInfoType[]
 	newPostText: string
-	dispatch: (action: ActionType) => void
 }
 
-export const MyPostsContainer: React.FC<MyPostsPropsType> = ({posts, newPostText, dispatch}) => {
+export const MyPostsContainer: React.FC<MyPostsPropsType> = ({posts, newPostText}) => {
+	let dispatch = useDispatch()
 	const addPost = () => {
 		dispatch(addPostAC())
 	}

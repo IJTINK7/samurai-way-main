@@ -1,22 +1,22 @@
 import React from 'react';
 import s from "./Profile.module.css"
 import {ProfileHeaderInfo} from "./ProfileHeaderInfo/ProfileHeaderInfo";
-import {ActionType, ProfilePageType} from "../../redux/store";
+import {ProfilePageType} from "../../redux/store";
 import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
+import {useSelector} from "react-redux";
+import {RootReducerType} from "../../redux/redux-store";
 
-type ProfilePropsType = {
-	profilePage: ProfilePageType
-	dispatch: (action: ActionType) => void
-}
 
-export const Profile: React.FC<ProfilePropsType> = ({profilePage, dispatch}) => {
+
+export const Profile = () => {
+	let state = useSelector<RootReducerType, ProfilePageType>(store => store.profile)
 	return (
 		<div className={s.profile_wrapper}>
 			<div>
 				<ProfileHeaderInfo/>
 			</div>
 			<div>
-				<MyPostsContainer posts={profilePage.posts} newPostText={profilePage.newPostText} dispatch={dispatch}/>
+				<MyPostsContainer posts={state.posts} newPostText={state.newPostText}/>
 			</div>
 		</div>
 	);
